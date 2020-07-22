@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/author'
 require './lib/library'
+require './lib/book'
 require 'pry'
 
 class LibraryTest < Minitest::Test
@@ -28,5 +29,17 @@ class LibraryTest < Minitest::Test
     dpl = Library.new("Denver Public Library")
 
     assert_equal [], dpl.authors
+  end
+
+  def test_it_can_add_authors
+    dpl = Library.new("Denver Public Library")
+
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+
+    dpl.add_author(charlotte_bronte)
+    dpl.add_author(harper_lee)
+
+    assert_equal [charlotte_bronte, harper_lee], dpl.authors
   end
 end
