@@ -17,6 +17,10 @@ class Book
   end
 
   def publication_year
+    if @publication_date.include?(", ")
     @publication_date.partition(", ").last
+    else
+      @publication_date
+    end
   end
 end

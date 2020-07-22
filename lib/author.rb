@@ -1,4 +1,5 @@
-class Author
+require './lib/book'
+class Author < Book
   attr_reader :first_name,
               :last_name,
               :books
@@ -10,6 +11,16 @@ class Author
 
   def name
     "#{@first_name} #{@last_name}"
+  end
+
+  # def books
+  #   @books =
+
+  def write(title, publication_date)
+    title = Book.new({author_first_name: "#{@first_name}",
+       author_last_name: "#{@last_name}", title: title,
+        publication_date: publication_date})
+    @books << title
   end
 
 end
