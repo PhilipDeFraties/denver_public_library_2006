@@ -15,4 +15,13 @@ class AuthorTest < Minitest::Test
     assert_equal "Charlotte", charlotte_bronte.first_name
     assert_equal "Bronte", charlotte_bronte.last_name
   end
+
+  def test_it_can_give_full_name
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+
+    assert_equal "Charlotte Bronte", charlotte_bronte.name
+  end
+
+
+
 end
