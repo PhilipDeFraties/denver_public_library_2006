@@ -21,7 +21,6 @@ class BookTest < Minitest::Test
        assert_equal "Harper", book.author_first_name
        assert_equal "Lee", book.author_last_name
        assert_equal "July 11, 1960", book.publication_date
-
      end
 
 end
