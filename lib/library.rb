@@ -19,4 +19,15 @@ class Library < Author
     @books << book
   end
 
+  def earliest_publication_for_author(author)
+    @books.find_all do |book|
+      book.author
+    end
+  end
+
+  def publication_time_frame_for(author)
+    {:start => earliest_publication_for_author,
+    :end => latest_publication_for_author}
+  end
+
 end
