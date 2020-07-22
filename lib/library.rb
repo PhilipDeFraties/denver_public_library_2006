@@ -1,4 +1,5 @@
-class Library
+require './lib/author'
+class Library < Author
 
   attr_reader :name,
               :books,
@@ -12,6 +13,10 @@ class Library
 
   def add_author(name)
     @authors << name
+  end
+
+  def add_book(book)
+    @books << book
   end
 
 end
