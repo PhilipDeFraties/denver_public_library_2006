@@ -15,10 +15,10 @@ class Author < Book
 
 
   def write(title, publication_date)
-    title = Book.new({author_first_name: "#{@first_name}",
+  @books <<  Book.new({author_first_name: "#{@first_name}",
        author_last_name: "#{@last_name}", title: title,
         publication_date: publication_date})
-    @books << title
+
   end
 
 end
